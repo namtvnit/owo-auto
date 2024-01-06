@@ -5,6 +5,7 @@ process.title = "Tool Farm OwO by Eternity_VN - aiko-chan-ai"
 import path from "path"
 import fs from "fs"
 import os from "os"
+import open from "open";
 
 //import files
 
@@ -88,6 +89,7 @@ process.on("SIGINT", function () {
 
                 log("WAITING FOR THE CAPTCHA TO BE RESOLVED TO RESTART...", "a")
                 await notify(message)
+                await open("https://owobot.com/captcha",{ app: 'google chrome' });
                 process.exit(1)
             }
 
